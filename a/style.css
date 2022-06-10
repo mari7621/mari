@@ -1,0 +1,643 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  } */
+
+body {
+  background: white;
+  background-size: cover;
+}
+
+header{
+  height: 80px;
+  line-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 180px;
+  position: fixed;
+  width: 100vw;
+  background-color:  rgba(255, 255, 255, 0.798);
+  z-index: 2;
+}
+header p{
+  font-size: 35px;
+
+  font-family: 'Pompiere', cursive;
+  font-weight: 600;
+}
+header ul{
+ display: flex;
+ width: 600px;
+ justify-content: space-between;
+}
+header a{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+header  a{
+
+  position: relative;
+
+  /* display: inline-block; */
+ /* margin-bottom: 20px; */
+  padding-bottom: 6px;
+  font-size: 29px;
+      text-decoration: none;
+      font-weight: 700;
+      font-family: 'Pompiere', cursive;
+      font-weight: 500;
+      padding-left: 3px;
+      padding-left: 3px;
+  }
+  
+header a:hover::after {
+    width: 100%;
+}
+
+header a::after{
+
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: rgb(136, 175, 192);
+  transition: all 0.3s ease 0s;
+} 
+
+.firstview h1 {
+  text-align: center;
+  padding-top: 320px;
+  color: white;
+  letter-spacing: 0.1rem;
+  font-weight: 900;
+  font-size: 80px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  margin-top: 0px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:200;
+}
+
+.firstview p {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  letter-spacing: 0.1rem;
+  font-family: 'Bad Script', cursive;
+  font-weight:300;
+  /* font-style: italic; */
+}
+
+/* 自分でh1とかpの色とか変えてるのいいね！ */
+
+.firstview {
+  background-image: url(images/favorite.png);
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  height: 900px;
+  background-attachment: fixed; /*--背景画像の固定--*/
+    background-repeat: no-repeat; /*--背景画像の繰り返し--*/
+    background-position: center center;/*--背景画像の位置--*/
+    height: 400px;　/*--スクロールをさせるため 高さ指定--*/
+    z-index: 1;
+}
+
+
+
+
+/*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown4{
+  /*描画位置※位置は適宜調整してください*/
+position:absolute;
+bottom:1%;
+right:50%;
+  /*矢印の動き1秒かけて永遠にループ*/
+animation: arrowmove 1s ease-in-out infinite;
+}
+
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove{
+    0%{bottom:1%;}
+    50%{bottom:3%;}
+    100%{bottom:1%;}
+}
+
+/*Scrollテキストの描写*/
+.scrolldown4 span{
+  /*描画位置*/
+position: absolute;
+left:-20px;
+bottom:10px;
+  /*テキストの形状*/
+color: #eee;
+font-size: 0.9rem;
+letter-spacing: 0.05em;
+/*縦書き設定*/
+-ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+/* 矢印の描写 */
+.scrolldown4:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: -6px;
+  /*矢印の形状*/
+  width: 1px;
+  height: 20px;
+  background: #eee;
+  transform: skewX(-31deg);
+}
+
+.scrolldown4:after{
+content:"";
+  /*描画位置*/
+position: absolute;
+bottom:0;
+right:0;
+  /*矢印の形状*/
+width:1px;
+height: 50px;
+background:#eee;
+}
+
+
+
+
+
+.about {
+  padding: 180px;
+}
+
+/* #2の29ページ
+この部分のクラス名はprofileじゃなくてaboutだったぽい〜↓ */
+/*.about{
+  padding: 180px;
+} */
+
+.profile h2 {
+  font-size: 64px;
+  letter-spacing: 0.1em;
+  background-image: linear-gradient(to right, #da9284, #afa8c7, #9eb6c5);
+	background-repeat: no-repeat;
+	background-size: 100% 25%;
+	background-position: bottom;
+	transition: all 0.25s ease-in;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.profile-text{
+  opacity: 0;
+  transform: translateY(20px);
+transition: all 2s;}
+
+.profile h3 {
+  margin-top: 30px;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+}
+.profile h3::first-letter {
+  font-weight: bold;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 50px;
+  color: black;
+}
+.profile p {
+  margin-top: 24px;
+  font-size: 16px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.profile img {
+  width: 480px;
+  height: 270px;
+  margin-left: 100px;
+}
+
+/* ＃２の32ページ */
+/* .profile img{
+  width: 480px;
+  height: 270px;
+  margin-left: 100px;
+} */
+
+.profile .profile-text {
+  width: 600px;
+  float: left;
+ text-align: left;
+}
+.profile{
+
+  /* text-align: center; */
+}
+.clearfix {
+  clear: both;
+}
+
+.school-club {
+  margin-top: 180px;
+  justify-content: space-between;
+  display: flex;
+  justify-content: space-around;
+}
+.school-club img {
+  width: 450px;
+  height: 330px;
+  border-radius: 16px;
+}
+.school-club h3 {
+  margin-top: 8px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.school-club p {
+  margin-top: 16px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.school-club a {
+  display: inline-block;
+  border-bottom: 1px solid;
+  margin-top: 32px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.favorite h2 {
+  font-size: 64px;
+  padding-top: 100px;
+  color: white;
+  letter-spacing: 0.1rem;
+  border-bottom: 6px double white;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+}
+.favorite {
+  text-align: center;
+  background-image: url(images/favo-img.jpeg);
+  background-size: cover;
+  background-attachment: fixed; /*--背景画像の固定--*/
+  background-repeat: no-repeat; /*--背景画像の繰り返し--*/
+  background-position: center center;/*--背景画像の位置--*/
+  height: 1800px;　/*--スクロールをさせるため 高さ指定--*/
+}
+.favorite-content h4 {
+  font-size: 24px;
+  margin-top: 16px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.favorite-content p {
+  font-size: 16px;
+  margin-top: 32px;
+  text-align: left;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.favorite-content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.favorite-content {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  margin: 30px ;
+  border-radius: 16px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.favorite-contents {
+  margin-top: 50px;
+  padding: 180px 150px 280px 150px;
+  /* 180 180 240 180 */
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.works h2 {
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  background-image: linear-gradient(to right, #da9284, #afa8c7, #9eb6c5);
+	background-repeat: no-repeat;
+	background-size: 100% 30%;
+	background-position: bottom;
+	transition: all 0.25s ease-in;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+.works {
+  padding: 180px;
+  text-align: center;
+  background-color: #e9eaf4;
+}
+.works-content {
+  display: block;
+  background-color: white;
+  display: flex;
+}
+.works-content img {
+  width: 320px;
+  height: 180px;
+}
+.works-content h3 {
+  font-size: 28px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.works-content p{
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  margin-top: 10px;
+}
+
+/* worksのホバー */
+.works-content {
+  font-size: 16px;
+  margin-top: 16px;
+  padding: 40px;
+  margin-top: 40px;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  text-align: left;
+}
+.works-content span {
+  font-size: 16px;
+  margin-left: 16px;
+}
+.works-text {
+  margin-left: 32px;
+}
+
+.works-content {
+  position: relative;
+  transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.works-content:before,
+.works-content::after {
+  content: "";
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  margin: auto;
+  transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
+  opacity: 0;
+}
+.works-content::before {
+  background: rgba(199, 158, 237, 0.343);
+  width: 100%;
+  height: 100%;
+}
+.works-content:after {
+  color: #fff;
+  content: "Read More";
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  right: 0;
+}
+.works-content:hover::before,
+.works-content:hover::after {
+  opacity: 1;
+}
+.works-content:hover::after {
+  letter-spacing: 0.1em;
+}
+.works-content:hover {
+  transform: scale(0.9);
+}
+/* worksのホバー */
+
+.contact {
+text-align: center;
+padding: 180px 370px;
+}
+
+.contact h2{
+  font-size: 64px;
+  /* border-bottom: 7px solid ; */
+  /* border-image: linear-gradient(to right, #D87763 0%, #847e98 100%);
+  border-image-slice: 1; */
+  background-image: linear-gradient(to right, #da9284, #afa8c7, #9eb6c5);
+	background-repeat: no-repeat;
+	background-size: 100% 30%;
+	background-position: bottom;
+	transition: all 0.25s ease-in;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+}
+.content h2:hover{
+	background-size: 100% 100%;
+	color: #ffffff;}
+
+.contact p{
+  margin-top: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  line-height:200%;
+  text-align:left;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+.contact a {
+  font-size: 24px;
+  font-weight:bold;
+  letter-spacing: 0.1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  /* width: 200px; */
+  line-height: 80px;
+  display: inline-block;
+  border-radius: 7px;
+}
+
+.contact .insta{
+ /* position: relative;
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+  /*overflow: hidden;  はみ出た部分を隠す*/
+  /*text-decoration:none;下線は消す*/
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */ 
+  display: inline-block;
+  padding: 18px 60px;  
+  border-radius:60px;
+  text-decoration: none;
+  border:1px solid #f13f79;
+  color: #f13f79;
+  outline: none;
+  transition: all 0.4s ease-out;
+}
+.contact .insta:hover{
+  /*ボタンの形状*/
+  border-color:transparent;
+  color: #fff;
+  /*背景の色と形状*/
+  background: linear-gradient(270deg, #f13f79 0%, #F2D447 50%, #733DA8 100%);
+  background-size: 200% auto;
+  background-position: right center;
+  /*ボックスの影*/   
+  box-shadow: 0 5px 10px rgb(159, 77, 107);
+}
+/* .contact .insta:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0; */
+  /*width: 100%;全体を覆う*/
+
+
+
+.contact .facebook{
+  /* background-color: #3b5998; */
+  display: inline-block;
+  padding: 18px 60px;  
+  border-radius:60px;
+  text-decoration: none;
+  border:1px solid #3b5998;
+  color: #3b5998;
+  outline: none;
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  transition: all 0.4s ease-out;
+}
+.contact .facebook:hover{
+  /*ボタンの形状*/
+  border-color:transparent;
+  color: #fff;
+  /*背景の色と形状*/
+  background: linear-gradient(270deg, #3b5998 0%, #97b8ff 50%, #888cce 100%);
+  background-size: 200% auto;
+  background-position: right center;
+  /*ボックスの影*/   
+  box-shadow: 0 5px 10px rgb(38, 76, 159);
+}
+
+.contact .twitter{
+  /* background-color: #333333; */
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  display: inline-block;
+  padding: 18px 60px;  
+  border-radius:60px;
+  text-decoration: none;
+  border:1px solid #4A99E9;
+  color: #4A99E9;
+  outline: none;
+  transition: all 0.4s ease-out;
+}
+.contact .twitter:hover{
+  /*ボタンの形状*/
+  border-color:transparent;
+  color: #fff;
+  /*背景の色と形状*/
+  background: linear-gradient(270deg, #4A99E9 0%, #a7fff2 50%, #888cce 100%);
+  background-size: 200% auto;
+  background-position: right center;
+  /*ボックスの影*/   
+  box-shadow: 0 5px 10px rgb(56, 87, 109);
+}
+
+.contact .sns{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+footer{
+  height: 80px;
+  background-color: #edece7;
+  line-height: 80px;
+  font-size: 14px;
+text-align: center;
+letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1400px) { 
+header{
+  padding: 0px 100px;
+}
+  .about{
+  padding:140px;
+}
+  .profile img {
+  margin-top: 20px;
+  width: 330px;
+  height:170px;
+  margin-left: 10px;
+}
+.profile h2{
+  font-size: 50px;
+}
+.profile h3::first-letter{
+  font-size: 40px;
+}
+  .favorite{
+    height: 2300px;
+
+  }
+  .school-club img{
+    width: 300px;
+    height: 200px;
+  }
+.favorite-contents{
+  padding:180px 120px 280px 120px;}
+  .contact{
+    padding: 190px 120px;
+  }
+
+  .works{
+    padding: 150px;
+  }
+
+  .contact a{
+    font-size: 19px;
+    line-height: 45px;
+  }
+}
+
+
+@media screen and (max-width:1023){
+  
+}
+
