@@ -793,6 +793,7 @@ header a{
 }
 .about{
   padding: 0;
+  margin: 5px;
 }
   .firstview{
     max-width: 100%;
