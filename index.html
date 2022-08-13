@@ -21,6 +21,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/jquery.bgswitcher.js"></script>
     <script src="js/main.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"
+      type="text/javascript"
+    ></script>
   </head>
   <body>
     <header>
@@ -50,9 +59,12 @@
         <img src="images/design.png" alt="" />
       </div>
       <div class="clearfix"></div>
+
       <div class="school-club">
-        <div>
-          <img src="images/koudo.jpeg" alt="" />
+        <div class="school">
+          <a href="images/koudo.jpeg" data-lightbox="group" class="link"
+            ><img src="images/koudo.jpeg" alt=""
+          /></a>
           <h3>学校について</h3>
           <p>
             中学校に通っています。小学生から同じ学校です。<br />楽しいです、画像は講堂です。
@@ -62,7 +74,9 @@
           >
         </div>
         <div class="kagakubu">
-          <img src="images/kagaku.png" alt="" />
+          <a href="images/kagaku.png" data-lightbox="group" class="link"
+            ><img src="images/kagaku.png" alt=""
+          /></a>
           <div class="club-text">
             <h3>化学部</h3>
             <p>
@@ -81,74 +95,90 @@
       <div class="favorite-contents">
         <div class="favorite-content">
           <img src="images/actage.png" alt="" />
-          <h4>漫画を読むこと</h4>
-          <p>特にアクタージュ(連載終了...) <br />最近面白かったのは進撃！</p>
+          <div class="favo-text">
+            <h4>漫画を読むこと</h4>
+            <p>特にアクタージュ(連載終了...) <br />最近面白かったのは進撃！</p>
+          </div>
         </div>
 
         <div class="favorite-content">
-          <img src="images/draw.png" alt="" />
-          <h4>絵を描くこと</h4>
-          <p>
-            <br />授業中に落書きをすることを7年ほど続けて少し上達しました
-            <br />デジタルは難しく勉強中..
-          </p>
+          <a href="images/draw.png" data-lightbox="group"
+            ><img src="images/draw.png" alt=""
+          /></a>
+          <div class="favo-text">
+            <h4>絵を描くこと</h4>
+            <p>
+              <br />授業中に落書きをすることを7年ほど続けて少し上達しました
+              <br />デジタルは難しく勉強中..
+            </p>
+          </div>
         </div>
 
         <div class="favorite-content">
-          <img src="images/rrm.png" alt="" />
-          <h4>Vtuberさん</h4>
-          <p><br />特に魔界ノりりむちゃん-にじさんじ</p>
+          <a href="images/rrm.png" data-lightbox="group"
+            ><img src="images/rrm.png" alt=""
+          /></a>
+          <div class="favo-text">
+            <h4>Vtuberさん</h4>
+            <p><br />特に魔界ノりりむちゃん-にじさんじ</p>
+          </div>
         </div>
-
         <div class="favorite-content">
           <img src="images/font.png" alt="" />
 
-          <h4>フォント</h4>
-          <p>
-            <br />フォントを眺めたることが好きです
-            <br />フォント紹介サイトも作りました！
-          </p>
+          <div class="favo-text">
+            <h4>フォント</h4>
+            <p>
+              <br />フォントを眺めたることが好きです
+              <br />フォント紹介サイトも作りました！
+            </p>
+          </div>
         </div>
 
         <div class="favorite-content">
           <img src="images/volley.png" alt="" />
 
-          <h4>バレーボール</h4>
-          <p><br />友達と弟と習っていました。 <br />今は友達と時々します。</p>
+          <div class="favo-text">
+            <h4>バレーボール</h4>
+            <p><br />友達と弟と習っていました。 <br />今は友達と時々します。</p>
+          </div>
         </div>
 
         <div class="favorite-content">
           <img src="images/book.png" alt="" />
 
-          <h4>読書</h4>
-          <p>
-            <br />読書が大大好きです。本中毒です。
-            <br />母に一日に持って行って良い本は2冊までと言われます
-          </p>
+          <div class="favo-text">
+            <h4>読書</h4>
+            <p>
+              <br />読書が大大好きです。本中毒です。
+              <br />母に一日に持って行って良い本は2冊までと言われます
+            </p>
+          </div>
         </div>
       </div>
     </section>
     <section class="works" id="works">
       <h2>Works</h2>
-      <a
-        class="works-content"
-        href="https://favorite-anm-mng-hn.netlify.app/"
-        target="_blank"
-      >
-        <img src="images/anime.png" alt="" />
-        <div class="works-text">
-          <h3>
-            好きなアニメ＆漫画&本紹介サイト-オリジナルWebサイト<span
-              >2020年10月 制作</span
-            >
-          </h3>
-          <p>
-            好きなアニメ＆漫画&小説の紹介サイトを作りました。
-
-            <br />こだわったところは色使いやレイアウトです。
-          </p>
-        </div>
-      </a>
+      <div class="worksall">
+        <a
+          class="works-content"
+          href="https://favorite-anm-mng-hn.netlify.app/"
+          target="_blank"
+        >
+          <img src="images/anime.png" alt="" />
+          <div class="works-text">
+            <h3>
+              好きなアニメ＆漫画&本紹介サイト-オリジナルWebサイト<span
+                >2020年10月 制作</span
+              >
+            </h3>
+            <p>
+              好きなアニメ＆漫画&小説の紹介サイトを作りました。
+              <br />こだわったところは色使いやレイアウトです。
+            </p>
+          </div>
+        </a>
+      </div>
 
       <a
         class="works-content"
